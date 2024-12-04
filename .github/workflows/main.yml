@@ -1,0 +1,30 @@
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  CI: 
+    runs-on: ubuntu-latest
+    
+    steps:      
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Python Syntax Checker
+      uses: cclauss/Find-Python-syntax-errors-action@master
+      
+    - name: Login to Docker Hub
+      uses: docker/login-action@v3
+      with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PWD }}
+          
+    - name: Docker Build and Push
+      uses: docker/build-push-action@v6.9.0
+      with: 
+        context: ./app
+        file: ./app/Dockerfile
+        push: true
+        tags: |
+          vdevops92/python-hello-app:${{github.run_number}}
+          vdevops92/python-hello-app:latest
