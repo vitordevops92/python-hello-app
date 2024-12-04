@@ -8,6 +8,8 @@ WORKDIR /app
 COPY . /app 
 
 # Instalando as dependências da aplicação
+RUN pip install --upgrade Flask
+RUN pip install werkzeug==2.0.3
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expondo a porta 5000
