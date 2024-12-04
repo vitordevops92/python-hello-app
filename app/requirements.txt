@@ -1,1 +1,2 @@
-Flask==2.0.1
+Flask>=2.0.0,<3.0.0
+Werkzeug==2.0.3  # Or a version compatible with Flask 2.x
