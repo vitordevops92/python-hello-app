@@ -21,7 +21,3 @@
 .idea/
 *.tmproj
 .vscode/
-.DS_Store
-.DS_Store?
-.history/*
-/.history/*
