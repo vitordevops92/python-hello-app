@@ -1,9 +1,9 @@
-replicaCount: 5
+replicaCount: 8
 
 image:
   repository: vdevops92/python-hello-app
   pullPolicy: IfNotPresent
-  tag: "4"
+  tag: "8"
 
 imagePullSecrets: []
 nameOverride: ""
