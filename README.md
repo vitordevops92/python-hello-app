@@ -1,2 +1,2 @@
-# python-hello-app
-# helm-chart application Kubernetes
+# Application Python Hello 🚀
+# Build from Docker Hub 🐳
